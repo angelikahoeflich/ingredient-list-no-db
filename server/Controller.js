@@ -9,13 +9,61 @@ module.exports = {
     res.status(200).send(foodArr)
   },
 
+  getOneIngredient: (req, res) => {
+    const { id } = req.params;
+
+    res.status(200).send(ingredientsList.ingredients.staples[id])
+  },
+
   addToList: (req, res) => {
+    let foodArr = ingredientsList.ingredients.additional;
+    let newIngredient= ''
+
+    newIngredient = req.body.newItem
+
+    foodArr.push(newIngredient)
+    console.log(foodArr)
+
+    res.status(200).send(foodArr)
+  },
+
+
+  editStaplesIngredient: (req, res) => {
+    const {id} = req.params;
+    const {newName} = req.body;
+    ingredientsList.ingredients.staples[id] = newName
+
+    res.status(200).send(ingredientsList.ingredients.staples)
+  },
+
+  editAdditionalIngredient: (req, res) => {
+    const {id} = req.params;
+    const {newName} = req.body;
+    ingredientsList.ingredients.additional[id] = newName
+
+    res.status(200).send(ingredientsList.ingredients.additional)
+
     
   },
-  editListIngredients: (req, res) => {
+
+  
+  removeFromStapleList: (req, res) => {
+    const { index } = req.params;
+    let { staples } = ingredientsList.ingredients
+    
+    staples.splice(index,1)
+   
+    res.status(200).send(staples)
     
   },
-  removeFromList: (req, res) => {
+  
+  removeFromAdditionalList: (req, res) => {
+    const { index } = req.params;
+    let { additional } = ingredientsList.ingredients
+    
+    additional.splice(index,1)
+   
+    res.status(200).send(additional)
     
   }
 

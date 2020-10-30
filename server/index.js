@@ -8,11 +8,14 @@ const ctrl = require('./Controller');
 //Middleware 
 app.use(express.json());
 
-
+//CRUD 
 app.get('/api/ingredients', ctrl.getIngredients);
-app.post('', ctrl.addToList);
-app.put('', ctrl.editListIngredients);
-app.delete('', ctrl.removeFromList);
+app.get('/api/ingredients/:id', ctrl.getOneIngredient);
+app.post('/api/ingredients', ctrl.addToList);
+app.put('/api/ingredients/staples/:id', ctrl.editStaplesIngredient);
+app.put('/api/ingredients/additonal/:id', ctrl.editAdditionalIngredient);
+app.delete('/api/ingredients/staples/:index', ctrl.removeFromStapleList);
+app.delete('/api/ingredients/additional/:index', ctrl.removeFromAdditionalList);
 
 
 
