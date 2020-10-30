@@ -4,10 +4,20 @@ let list =[];
 module.exports = {
     
   getIngredients: (req, res) => {
-    let foodArr = [];
-    foodArr.push(ingredientsList.ingredients.staples)
-    res.status(200).send(foodArr)
+    //let foodArr = [];
+    //foodArr.push(ingredientsList.ingredients.staples)
+    //console.log("get ingredients foodArr:", foodArr);
+    res.status(200).json(ingredientsList.ingredients)
   },
+
+  getStaples: (req, res) => {
+    res.status(200).json(ingredientsList.ingredients.staples)
+  },
+
+  getAdditional: (req, res) => {
+    res.status(200).json(ingredientsList.ingredients.additional)
+  },
+
 
   getOneIngredient: (req, res) => {
     const { id } = req.params;
