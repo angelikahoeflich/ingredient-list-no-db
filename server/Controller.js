@@ -1,5 +1,5 @@
 const ingredientsList = require('./Ingredients.json');
-let list =[];
+// let list =[];
 
 module.exports = {
     
@@ -27,13 +27,16 @@ module.exports = {
   },
 
   addToList: (req, res) => {
-    let foodArr = ingredientsList.ingredients.additional;
+    let foodArr = ingredientsList.ingredients.staples;
     let newIngredient= ''
 
-    newIngredient = req.body.newItem
+    newIngredient = req.body
 
-    foodArr.push(newIngredient)
-    console.log(foodArr)
+    foodArr.push({
+      id: foodArr.length+1,
+      name: newIngredient.name
+    })
+    console.log(ingredientsList)
 
     res.status(200).send(foodArr)
   },

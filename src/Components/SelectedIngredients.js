@@ -1,20 +1,13 @@
 import React from 'react';
 
-function SelectedIngredients(props){
-  console.log('wtf', props)
-  console.log('wtf-start')
-
+function SelectedIngredients(props) {
+  console.log('Selected props.list WTF!!!!', props.list)
   
-  let selected;
-
-  if (props.list.length > 0) {
-    selected = props.list.map((ingredient) => {
+  let selected = props.list.map((ingredient) => {
       return (
         <li key={ingredient.id}>{ingredient.name}</li>
       )
     })
-  }
-  console.log('wtf-end')
 
   return <ul>{selected}</ul>
 

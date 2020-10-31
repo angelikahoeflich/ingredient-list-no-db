@@ -2,12 +2,18 @@ import React from 'react';
 
 
 function StapleList(props) {
+  console.log("Props from StapleList WTF!!!", props)
   let listItems = props.staples.map( 
     (item, index) => {
       return(
-        <li onClick={props.add} key={item.id} index={item.id}>
-          {item.name}
-        </li>)
+        <div key={item.id}>
+          <span onClick={props.add} index={item.id}>
+            • {item.name} 
+          </span>
+          <strong onClick={props.deleteItem} index={item.id}>
+            &nbsp;x
+          </strong>
+        </div> )
     }
   )
 
