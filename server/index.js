@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const port = 4040;
 const ctrl = require('./Controller');
-const cors = require('cors');
 
 
-//Middleware 
+//Middleware
+app.use( cors() )
 app.use(express.json());
-app.use( cors() );
 
 //CRUD 
 app.get('/api/ingredients', ctrl.getIngredients);

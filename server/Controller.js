@@ -8,6 +8,7 @@ module.exports = {
     //foodArr.push(ingredientsList.ingredients.staples)
     //console.log("get ingredients foodArr:", foodArr);
     res.status(200).json(ingredientsList.ingredients)
+
   },
 
   getStaples: (req, res) => {
