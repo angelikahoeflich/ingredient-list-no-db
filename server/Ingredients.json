@@ -9,10 +9,6 @@
     {"id":5, "name" :"quinoa"},
     {"id": 6, "name": "almond milk"},
     {"id":7, "name":"coconut oil"}
-  ],
-
-    "additional": [
-      
-    ]
+  ]
   }
 }

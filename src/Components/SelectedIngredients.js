@@ -5,7 +5,9 @@ function SelectedIngredients(props) {
   
   let selected = props.list.map((ingredient) => {
       return (
-        <li key={ingredient.id}>{ingredient.name}</li>
+        
+      <li className="selected-ingredients" key={ingredient.id}>{ingredient.name}<input type="text"/><button onClick={props.editItem}>✎</button></li>
+      
       )
     })
 

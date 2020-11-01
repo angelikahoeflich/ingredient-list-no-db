@@ -10,7 +10,6 @@ class App extends Component{
 
     this.state = {
       staples: [],
-      additional: [],
       newItemValue: '',
       selected: []
     }
@@ -33,15 +32,15 @@ class App extends Component{
   }
 
   addToSelected(click){
-    console.log("click.target.getAttribute('index')", click.target.getAttribute('index'))
+    // console.log("click.target.getAttribute('index')", click.target.getAttribute('index'))
 
     let selectedIngredient = this.state.staples.filter(ingredient=> +click.target.getAttribute('index') === ingredient.id);
 
-    console.log("selectedIngredient", selectedIngredient)
+    // console.log("selectedIngredient", selectedIngredient)
     
     let newList = this.state.selected;
     newList.push(selectedIngredient[0]);
-    console.log("newList", newList)
+    // console.log("newList", newList)
     this.setState({
       selected:newList
     })
@@ -64,7 +63,7 @@ class App extends Component{
         name: this.state.newItemValue
       }
 
-      console.log("newIngredient", newIngredient);
+      // console.log("newIngredient", newIngredient);
 
       newAdditionalItem.push(newIngredient);
 
@@ -114,7 +113,7 @@ class App extends Component{
         </section> */}
 
         <section className="">
-          <h3>Selected Ingredients:</h3>
+          <h3>GROCERY LIST:</h3>
           <SelectedIngredients list={this.state.selected} />
         </section>
       </main>
