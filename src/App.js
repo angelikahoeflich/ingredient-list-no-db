@@ -90,6 +90,20 @@ class App extends Component{
 
     this.setState({staples: newStaples})
   }
+
+  // removeFromTeam = (index) => {
+  //   axios
+  //     .delete(`/api/team/${index}`)
+  //     .then((res) => {
+  //       this.setState({ team: res.data });
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
+  
+  editItem(event){
+    
+  }
   
   render(){
   return (
@@ -100,17 +114,11 @@ class App extends Component{
 
       <main className="main-list">
         <section className="staples">
-          <h3>Staple Ingredients:</h3>
+          <h3>USUALLY BOUGHT:</h3>
           <input type="text" id="newItem" value={this.state.newItemValue} onChange={this.newItemChange} onKeyPress={this.listenForEnter}/>
           <StapleList staples={this.state.staples} add={this.addToSelected} deleteItem={this.deleteItem}/>
         </section>
 
-        {/* <section className="additionals">
-          <h3>Additional Ingredients:</h3>
-            <input type="text" id="newItem" value={this.state.newItemValue} onChange={this.newItemChange} onKeyPress={this.listenForEnter}/>
-            <Additional list={this.state.additional}/>
-
-        </section> */}
 
         <section className="">
           <h3>GROCERY LIST:</h3>

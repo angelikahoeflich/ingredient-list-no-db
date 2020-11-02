@@ -39,3 +39,7 @@ body{
 .selected-ingredients > button{
   display:inline;
 }
+
+input[type=number]{
+  width:30px;
+}
